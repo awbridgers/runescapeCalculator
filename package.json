@@ -1,0 +1,14 @@
+{
+  "name": "runescapeCalc",
+  "version": "1.0.0",
+  "description": "Calculate xp needed to reach a target level",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Bridgers",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
