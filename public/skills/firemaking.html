@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Firemaking Calculator</title>
+    <embed src="../rstheme.mp3" autostart="true" loop="true"
+    width="2" height="0">
+    </embed>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/starter-template.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Firemaking Calculator</h1>
+        <!-- <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p> -->
+      </div>
+
+    </div><!-- /.container -->
+
+    <div class = "starter-template">
+      <p><label for="inputMsg">Enter current XP here: <input type="text" name="currnet" id = 'current' value="" placeholder="Current XP"></p>
+      <p><label for="inputMsg">Enter target level here: <input type="text" name="target" id = 'target' value="" placeholder="Target Level"></p>
+      <p><button type="button" id="submitButton"  onclick="calculate()">Calculate!</button></p>
+      <p id = "textReport"><i>TEST</i></p>
+    </div>
+
+
+<div class= "starter-template">
+<table class="tbl" id="actions" cellspacing="0">
+<thead><tr>
+<th class="tabletop" width="20">&nbsp;</th>
+<th class="tabletop" width="20">&nbsp;</th>
+<th class="tabletop" width = "200">Name</th>
+<th class="tabletop" width="40">Level</th>
+<th class="tabletop" width="40">XP</th>
+<th class="tabletop" width="100" id="last_th">Number</th>
+</tr></thead>
+<tbody>
+<tr class="" id="tr0"><td><img src="../css/images/yes.gif" id="image0" class="rimg"/></td><td width="30" height="30"><img src="../css/images/firemaking/Logs.png" class="iimg"/></td><td>Log</td><td id="level0">1</td><td id="xp0">40</td><td id="num0"></td></tr>
+<tr class="" id="tr1"><td><img src="../css/images/no.gif" id="image1" class="rimg"/></td><td width="30" height="30"><img src="../css/images/firemaking/Log_Oak.png" class="iimg"/></td><td>Oak log</td><td id="level1">15</td><td id="xp1">60</td><td id="num1"></td></tr>
+<tr class="" id="tr2"><td><img src="../css/images/no.gif" id="image2" class="rimg"/></td><td width="30" height="30"><img src="../css/images/firemaking/Log_Willow.png" class="iimg"/></td><td>Willow log</td><td id="level2">30</td><td id="xp2">90</td><td id="num2"></td></tr>
+<tr class=" memb" id="tr3"><td><img src="../css/images/no.gif" id="image3" class="rimg"/></td><td width="30" height="30"><img src="../css/images/firemaking/Log_Teak.png" class="iimg"/></td><td>Teak log</td><td id="level3">35</td><td id="xp3">105</td><td id="num3"></td></tr>
+<tr class="" id="tr4"><td><img src="../css/images/no.gif" id="image4" class="rimg"/></td><td width="30" height="30"><img src="../css/images/firemaking/Log_Maple.png" class="iimg"/></td><td>Maple log</td><td id="level4">45</td><td id="xp4">135</td><td id="num4"></td></tr>
+<tr class=" memb" id="tr5"><td><img src="../css/images/no.gif" id="image5" class="rimg"/></td><td width="30" height="30"><img src="../css/images/firemaking/Log_Mahogany.png" class="iimg"/></td><td>Mahogany log</td><td id="level5">50</td><td id="xp5">157.5</td><td id="num5"></td></tr>
+<tr class="" id="tr6"><td><img src="../css/images/no.gif" id="image6" class="rimg"/></td><td width="30" height="30"><img src="../css/images/firemaking/Log_Yew.png" class="iimg"/></td><td>Yew log</td><td id="level6">60</td><td id="xp6">202.5</td><td id="num6"></td></tr>
+<tr class=" memb" id="tr7"><td><img src="../css/images/no.gif" id="image7" class="rimg"/></td><td width="30" height="30"><img src="../css/images/firemaking/Log_Magic.png" class="iimg"/></td><td>Magic log</td><td id="level7">75</td><td id="xp7">303.75</td><td id="num7"></td></tr>
+</tbody>
+</table>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- <script src="../js/Calc.js"></script> -->
+    <!-- Begin calculation script here -->
+    <script>
+
+    var levelAmounts = {
+    1:0,
+    2:83,
+    3:174,
+    4:276,
+    5:388,
+    6:512,
+    7:650,
+    8:801,
+    9:969,
+    10:1154,
+    11:1358,
+    12:1584,
+    13:1833,
+    14:2107,
+    15:2411,
+    16:2746,
+    17:3115,
+    18:3523,
+    19:3973,
+    20:4470,
+    21:5018,
+    22:5624,
+    23:6291,
+    24:7028,
+    25:7842,
+    26:8740,
+    27:9730,
+    28:10824,
+    29:12031,
+    30:13363,
+    31:14833,
+    32:16456,
+    33:18247,
+    34:20224,
+    35:22406,
+    36:24815,
+    37:27473,
+    38:30408,
+    39:33648,
+    40:37224,
+    41:41171,
+    42:45529,
+    43:50339,
+    44:55649,
+    45:61512,
+    46:67983,
+    47:75127,
+    48:83014,
+    49:91721,
+    51:111945,
+    52:123660,
+    53:136594,
+    54:150872,
+    55:166636,
+    56:184040,
+    57:203254,
+    58:224466,
+    59:247886,
+    60:273742,
+    61:302288,
+    62:333804,
+    63:368599,
+    64:407015,
+    65:449428,
+    66:496254,
+    67:547953,
+    68:605032,
+    69:668051,
+    70:737627,
+    71:814445,
+    72:899257,
+    73:992895,
+    74:1096278,
+    75:1210421,
+    76:1336443,
+    77:1475581,
+    78:1629200,
+    79:1798808,
+    80:1986068,
+    81:2192818,
+    82:2421087,
+    83:2673114,
+    84:2951373,
+    85:3258594,
+    86:3597792,
+    87:3972294,
+    88:4385776,
+    89:4842295,
+    90:5346332,
+    91:5902831,
+    92:6517253,
+    93:7195629,
+    94:7944614,
+    95:8771558,
+    96:9684577,
+    97:10692629,
+    98:11805606,
+    99:13034431
+    };
+    var xpAmounts = {
+      Log: 40,           //logs
+      oakLog: 60,           //oak logs
+      willowLog: 90,           //
+      teakLog: 105,
+      mapleLog: 135,
+      mahoganyLog: 157.5,
+      yewLog: 202.5,
+      magicLog: 303.75
+
+    };
+
+
+    function calculate(){
+      var error = false
+      var currentXP = document.getElementById('current').value;
+      var targetLvl = document.getElementById('target').value;
+      var currentLvl = getLevel(currentXP);
+      var targetXP= levelAmounts[targetLvl];
+
+      var neededXP = targetXP - currentXP;
+      if(!isNaN(currentXP) && !isNaN(targetLvl) && (targetLvl > currentLvl) && currentXP < 13034431){
+        document.getElementById('textReport').innerHTML = "You need <b>" + neededXP + "</b> XP to level up from level <b>" + currentLvl + "</b> to level <b>"+ targetLvl + "</b>" ;
+        var firstRun = true;
+        for(var log in xpAmounts){
+            if(firstRun){
+              i=0;
+            }
+          var id = "num" + i;
+          i=i+1;
+
+        document.getElementById(id).innerHTML = getNumber(xpAmounts[log], currentXP, targetXP);
+        firstRun = false;
+
+      }
+      }
+      else if(currentXP >= 13034431 && !isNaN(currentXP) && !isNaN(targetLvl)){
+          document.getElementById('textReport').innerHTML = "You already have 99!";
+      }
+      else{
+          document.getElementById('textReport').innerHTML = "Please enter valid inputs for levels";
+      }
+      console.log(levelAmounts[currentLvl]);
+      console.log(targetLvl);
+      var test;
+      test = getLevel(currentXP);
+      console.log(test);
+
+
+    }
+
+
+    function getLevel(XP){
+      var cLevel = 1;
+      if(XP < 13034431){
+      for(var key in levelAmounts){
+        if(levelAmounts[key] <= XP){
+          cLevel = key
+        }
+      }
+
+      }
+      else{
+        cLevel = 99;
+      }
+      return cLevel;
+    }
+
+    // function to determine how many of each log one would need to burn to reach target level
+    function getNumber(xp,current,target){
+      return Math.ceil((target-current)/xp);
+    }
+
+</script>
+
+  </body>
+</html>

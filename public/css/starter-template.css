@@ -8,59 +8,72 @@ body {
   background-size: cover;
 }
 .starter-template {
-  padding: 40px 15px;
+  padding: 10px 15px;
   text-align: center;
 }
-.dateView{
-  text-align: center;
-  padding: 40px 15px;
+#submitButton{
+
+    display: block;
+    text-align: center;
+    width: 76;
+    margin: 0 auto;
 }
 
-#logOut{
-  position:fixed;
-  right:10px;
-  top:0px;
+
+#skills, #xp {
+margin: 0 auto;
+width: 540px;
+border-collapse: collapse;
+}
+#skills strong {
+display: block;
+text-align: center;
+}
+#skills a {
+display: block;
+text-decoration: none;
+}
+#skills td {
+vertical-align: top;
+width: 150px;
+}
+#skills img {
+vertical-align: middle;
+padding-right: 5px;
+}
+#xp td, #xp th {
+border: 1px solid #000;
+text-align: center;
+}
+.boxtop,.boxed,.tabletop,.navigation h3 {
+	background-color:#005474;
+	color:#fff;
+}
+.tbl {
+	border-collapse:collapse;
+	width:65%;
+	border:1px solid #000;
+  color: #FFFFFF;
+  font-weight: bold;
+  margin: auto;
+  padding: 20px;
 
 }
-
-#home{
-  position: absolute;
-  left: 10px;
+.tbl th,.tbl td {
+	border:0;
+	border-top:1px solid #000;
+	padding:0;
+	text-align:center;
 }
-#viewer{
-  position: relative;
-  left: 40px;
+.tbl th {
+	padding:2px 4px;
 }
-#previousButton{
-  margin-right: 300px;
-
+.iimg {
+	border:1px solid #000;
+	border-width:0 1px;
+	width:30px;
+	height:30px;
 }
-#nextButton{
-
-  left: 150px;
-
-
-
-}
-
-#textReport{
-  padding-bottom: 500px;
-
-  display: block;
-
-  margin: 0 auto;
-
-  width: 60em;
-  margin-top: 100px;
-
-  text-align: justify;
-
-  -moz-text-align-last: center;
-   text-align-last: center;
-}
-#dateText{
-margin-top: -105px;
-
-
-
+i{
+  visibility: hidden;
 }
