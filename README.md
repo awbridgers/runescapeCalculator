@@ -1,7 +1,8 @@
-# runescapeCalculator
-A simple program to help calculate the XP needed to reach a target level in the popular online game *Runescape*
+# Runescape Calculator
+## A simple program to help calculate the XP needed to reach a target level in the popular online game *Runescape*
 
-To run this program locally:
+
+###To run this program locally:
 
 1. [Install Node.js][]
 2. cd into the directory containing app.js
