@@ -41,6 +41,7 @@ git commit -m "commit message describing what you did"
 git push origin <name of your branch>
 ```
 
+* To make pushing to your repos safer and easier, you may wish to [add an ssh key to your github account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 * When you have pushed your changes, under **Your recently pushed branches** click **Compare and pull request** (if this does not show up, just click **new pull request**)
 * Enter a title and description for your changes
 * When you are ready click **Create Pull Request**
