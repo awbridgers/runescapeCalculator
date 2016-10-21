@@ -11,6 +11,13 @@
 * Click **Clone or Download** on the right side of this repository page, and copy the link
 * In your command prompt or terminal, cd to the directory where you want this project to reside, and type `git clone <url>` where `<url>` is the copied link.
 * Type `cd runescapeCalculator` to move to the directory of the newly cloned folder
+* Switch to the branch you created:
+
+```
+git checkout <your branch name>
+git pull origin <your branch name>
+```
+
 * Be sure to set a reference to the original repository, so you can pull changes to your repository:
 
 ```
