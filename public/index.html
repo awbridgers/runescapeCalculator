@@ -10,7 +10,10 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>Runescape Calculator</title>
+    <!--embed src="rstheme.mp3" autostart="false" loop="true"
+    width="2" height="0"-->
     <embed src="rstheme.mp3" autostart="true" loop="true">
+
     </embed>
 
     <!-- Bootstrap core CSS -->
@@ -74,8 +77,9 @@
     <div class = 'starter-template'>
       <table id = 'skills'>
         <tr><td>
-          <a href = "skills/firemaking.html" title = "Runescape Firemaking Calculator"><img src = "css/images/firemaking.gif" />Firemaking</a>
-
+          <a href = "#" title = "Runescape Firemaking Calculator" onclick = "begin()">
+          <img src = "css/images/firemaking.gif" />Firemaking</a>
+          <audio id="sound1" src="fire.wav" preload="auto"></audio>
 
 
     <!-- Bootstrap core JavaScript
@@ -89,5 +93,11 @@
 
     <script src="js/Calc.js"></script>
 
+<script>
+  function begin(){
+    document.getElementById('sound1').play();
+    var timer = setTimeout(function gogo(){window.location.assign("skills/firemaking.html")},400);
+  }
+</script>
   </body>
 </html>
