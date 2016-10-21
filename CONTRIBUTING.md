@@ -41,4 +41,9 @@ git commit -m "commit message describing what you did"
 git push origin <name of your branch>
 ```
 
-* When you have pushed your changes, click
+* When you have pushed your changes, under **Your recently pushed branches** click **Compare and pull request** (if this does not show up, just click **new pull request**)
+* Enter a title and description for your changes
+* When you are ready click **Create Pull Request**
+* An admin will comment on your PR regarding any necessary changes. To add new changes to this PR, simply push to the same branch of your repository
+* Once the PR is merged, you can delete your branch, and create a new branch for your new changes.
+* Remember to pull in the new changes from `upstream master` to your forked repo before starting new changes
