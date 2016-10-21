@@ -6,7 +6,8 @@
 ## Forking and Cloning this repository
 * In the top right of this repo, click **fork**
 * You should be redirected to a new repository, which is your forked version of this repository
-* Here, click on branch, and type the name of the new branch you wish to use for your contribution, for example `ranged` if you're making a ranged calculator
+* Here, click on the **branch:master** button, and type the name of the new branch in the text search bar
+* Name branches for the changes they will be used to add, for example `ranged` if you're making a ranged calculator
 * Click **Clone or Download** on the right side of this repository page, and copy the link
 * In your command prompt or terminal, cd to the directory where you want this project to reside, and type `git clone <url>` where `<url>` is the copied link.
 * Type `cd runescapeCalculator` to move to the directory of the newly cloned folder
@@ -28,7 +29,7 @@ git remote add upstream https://github.com/awbridgers/runescapeCalculator.git
 * Before contributing your changes, always make sure you have pulled the latest changes from the original repository:
 
 ```
-git fetch origin upstream
+git fetch upstream
 git merge upstream/master
 ```
 
