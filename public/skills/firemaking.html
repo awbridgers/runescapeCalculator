@@ -147,8 +147,8 @@
     function calculate(){
       var error = false
       var currentXP = document.getElementById('current').value;
-      var targetLvl = document.getElementById('target').value;
-      var currentLvl = getLevel(currentXP);
+      var targetLvl = parseInt(document.getElementById('target').value,10);
+      var currentLvl = parseInt(getLevel(currentXP),10);
       var targetXP= levelAmounts[targetLvl];
 
       var neededXP = targetXP - currentXP;
@@ -166,20 +166,38 @@
         firstRun = false;
 
       }
-      }
+
+        //change the 'x' to a check if the user is over the level for each specific type of item
+        for(i=0; i<65; i++){
+          var itemLevel = "level" + i;
+          var image = "image" + i;
+          //console.log(document.getElementById(itemLevel).innerHTML);
+          //console.log(currentLvl);
+          //console.log(currentLvl >= parseInt(document.getElementById(itemLevel).innerHTML,10));
+
+          //if user's level is higher than the item level, change the 'x' to a check
+          if(currentLvl >= parseInt(document.getElementById(itemLevel).innerHTML,10)){
+
+              document.getElementById(image).src= "../css/images/yes.gif";
+            }
+            //make sure it can go back to an 'x' if they enter a lower level
+            else{
+                document.getElementById(image).src= "../css/images/no.gif";
+              }
+            }
+          }
+      //if currentXP is over the amount needed for 99, then the user cannot get a level up
       else if(currentXP >= 13034431 && !isNaN(currentXP) && !isNaN(targetLvl)){
           document.getElementById('textReport').innerHTML = "You already have 99!";
       }
-      else{
-          document.getElementById('textReport').innerHTML = "Please enter valid inputs for levels";
+      //if the inputs are numbers but target < current
+      else if(!isNaN(currentXP) && !isNaN(targetLvl) && (targetLvl < currentLvl)){
+        document.getElementById('textReport').innerHTML = "Your target level is lower than your current level";
       }
-      console.log(levelAmounts[currentLvl]);
-      console.log(targetLvl);
-      var test;
-      test = getLevel(currentXP);
-      console.log(test);
-
-
+      //if the inputs aren't numbers
+      else{
+          document.getElementById('textReport').innerHTML = "Please enter numbers";
+      }
     }
 
 
