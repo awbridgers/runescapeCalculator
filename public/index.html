@@ -79,7 +79,18 @@
         <tr><td>
           <a href = "#" title = "Runescape Firemaking Calculator" onclick = "begin()">
           <img src = "css/images/firemaking.gif" />Firemaking</a>
-          <audio id="sound1" src="fire.wav" preload="auto"></audio>
+          <audio id="sound1" src="effects/fire.wav" preload="auto"></audio>
+    </div>
+
+    <h1 style = "position:absolute; TOP:475px; LEFT:80px; WIDTH:300px; HEIGHT:50px">
+      <font size = "4" color = "blue">Click for Icy Things!</h1>
+      <a href = "#" button onclick ="soundscool()">
+        <img style = "position:absolute; TOP:535px; LEFT:190px; WIDTH:50px; HEIGHT:50px"
+        src = "css/images/ice_icon.png"></a>
+        <audio id = "i1" src="effects/ice1.mp3" preload="auto"></audio>
+        <audio id = "i2" src="effects/ice2.mp3" preload="auto"></audio>
+        <audio id = "i3" src="effects/ice3.mp3" preload="auto"></audio>
+        <audio id = "i4" src="effects/ice4.mp3" preload="auto"></audio>
 
 
     <!-- Bootstrap core JavaScript
@@ -97,6 +108,14 @@
   function begin(){
     document.getElementById('sound1').play();
     var timer = setTimeout(function gogo(){window.location.assign("skills/firemaking.html")},400);
+  }
+
+  function soundscool(){
+    var x = ((Math.random()*4) + 1);
+    if (x > 1 && x < 2){document.getElementById('i3').play();}
+    else if (x > 2 && x < 3){document.getElementById('i1').play();}
+    else if (x > 3 && x < 4){document.getElementById('i2').play();}
+    else if (x > 4){document.getElementById('i4').play();}
   }
 </script>
   </body>
