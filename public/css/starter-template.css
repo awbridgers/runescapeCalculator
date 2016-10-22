@@ -81,3 +81,9 @@ text-align: center;
 i{
   visibility: hidden;
 }
+#returnHome{
+  position: fixed;
+  right:20px;
+  top:20px;
+
+}
