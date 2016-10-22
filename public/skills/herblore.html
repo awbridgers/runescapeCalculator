@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Herblore Calculator</title>
+    <embed src="../rstheme.mp3" autostart="true" loop="true">
+    </embed>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
+
+    <!-- Custom styles for this template -->
+    <link href="../css/starter-template.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Herblore Calculator</h1>
+        <!-- <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p> -->
+      </div>
+
+    </div><!-- /.container -->
+
+    <div class="starter-template" align="centered" id="hiscores">
+      <h3> Import Hiscores </h3>
+      <form id="hiscores">
+        <input id=username type="text" placeholder="your username"></input>
+        <input type="submit">Get your stats!</input>
+      </form>
+    </div>
+
+    <div class = "starter-template">
+      <p><label for="inputMsg">Enter current XP here: <input type="text" name="currnet" id = 'current' value="" placeholder="Current XP"></p>
+      <p><label for="inputMsg">Enter target level here: <input type="text" name="target" id = 'target' value="" placeholder="Target Level"></p>
+      <p><button type="button" id="submitButton"  onclick="calculate()">Calculate!</button></p>
+      <p id = "textReport"><i>TEST</i></p>
+    </div>
+
+
+<div class= "starter-template">
+<table class="tbl" id="actions" cellspacing="0">
+<thead><tr>
+<th class="tabletop" width="20">&nbsp;</th>
+<th class="tabletop" width="20">&nbsp;</th>
+<th class="tabletop" width = "200">Name</th>
+<th class="tabletop" width="40">Level</th>
+<th class="tabletop" width="40">XP</th>
+<th class="tabletop" width="100" id="last_th">Number</th>
+</tr></thead>
+<tbody>
+  <tr id="tr0">
+  <td class=""><img src="../css/images/no.gif" id ="img0" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/HGuam.png" width="30" height="30" class="iimg"></td>
+  <td class="">Clean Guam leaf</td>
+  <td class="" id= "level0">3</td>
+  <td class="">2.5</td>
+  <td class="" id = "num0"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img1" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_att.gif" width="30" height="30" class="iimg" alt="Runescape Image for Attack potion"/></td>
+  <td class="">Attack potion</td>
+  <td class="" id= "level1">3</td>
+  <td class="">25</td>
+  <td class="" id = "num1"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img2" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/attack_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Attack mix"/></td>
+  <td class="">Attack mix</td>
+  <td class="" id= "level2">4</td>
+  <td class="">8</td>
+  <td class="" id = "num2"</td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img3" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/HMarrentill.png" width="30" height="30" class="iimg" alt="Runescape Image for Clean Marrentill"/></td>
+  <td class="">Clean Marrentill</td>
+  <td class="" id= "level3">5</td>
+  <td class="">3.75</td>
+  <td class="" id = "num3"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img4" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_antip.gif" width="30" height="30" class="iimg" alt="Runescape Image for Antipoison"/></td>
+  <td class="">Antipoison</td>
+  <td class="" id= "level4">5</td>
+  <td class="">37.5</td>
+  <td class="" id = "num4"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img5" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/anti_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Anti-poison"/></td>
+  <td class="">Anti-poison</td>
+  <td class="" id= "level5">6</td>
+  <td class="">12</td>
+  <td class="" id = "num5"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img6" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_relic.gif" width="30" height="30" class="iimg" alt="Runescape Image for Relicym's balm"/></td>
+  <td class="">Relicym's balm</td>
+  <td class="" id= "level6">8</td>
+  <td class="">40</td>
+  <td class="" id = "num6"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id="img7" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/relicym_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Relicym's balm mix"/></td>
+  <td class="">Relicym's balm mix</td>
+  <td class="" id= "level7">9</td>
+  <td class="">14</td>
+  <td class="" id = "num7"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img8" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/HTarromin.png" width="30" height="30" class="iimg" alt="Runescape Image for Clean Tarromin"/></td>
+  <td class="">Clean Tarromin</td>
+  <td class="" id= "level8">11</td>
+  <td class="">5</td>
+  <td class="" id = "num8"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img9" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_str.gif" width="30" height="30" class="iimg" alt="Runescape Image for Strength potion"/></td>
+  <td class="">Strength potion</td>
+  <td class="" id= "level9">12</td>
+  <td class="">50</td>
+  <td class="" id = "num9"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img10" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/str_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Strength mix"/></td>
+  <td class="">Strength mix</td>
+  <td class="" id= "level10">14</td>
+  <td class="">17</td>
+  <td class="" id = "num10"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img11" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_serum.gif" width="30" height="30" class="iimg" alt="Runescape Image for Serum 207"/></td>
+  <td class="">Serum 207</td>
+  <td class="" id= "level11">15</td>
+  <td class="">50</td>
+  <td class="" id = "num11"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img12" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/HHarralander.png" width="30" height="30" class="iimg" alt="Runescape Image for Clean Harralander"/></td>
+  <td class="">Clean Harralander</td>
+  <td class="" id= "level12">20</td>
+  <td class="">6.5</td>
+  <td class="" id = "num12"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img13" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_restore.gif" width="30" height="30" class="iimg" alt="Runescape Image for Restore potion"/></td>
+  <td class="">Restore potion</td>
+  <td class="" id= "level13">22</td>
+  <td class="">62.5</td>
+  <td class="" id = "num13"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img14" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/statrestore_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Stat restore mix"/></td>
+  <td class="">Stat restore mix</td>
+  <td class="" id= "level14">24</td>
+  <td class="">21</td>
+  <td class="" id = "num14"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img15" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/HRanarr.png" width="30" height="30" class="iimg" alt="Runescape Image for Clean Ranarr weed"/></td>
+  <td class="">Clean Ranarr weed</td>
+  <td class="" id= "level15">25</td>
+  <td class="">7.5</td>
+  <td class="" id = "num15"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img16" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_energ.gif" width="30" height="30" class="iimg" alt="Runescape Image for Energy potion"/></td>
+  <td class="">Energy potion</td>
+  <td class="" id= "level16">26</td>
+  <td class="">67.5</td>
+  <td class="" id = "num16"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img17" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/energy_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Energy mix"/></td>
+  <td class="">Energy mix</td>
+  <td class="" id= "level17">29</td>
+  <td class="">23</td>
+  <td class="" id = "num17"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img18" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/clean_toadflax.png" width="30" height="30" class="iimg" alt="Runescape Image for Clean Toadflax"/></td>
+  <td class="">Clean Toadflax</td>
+  <td class="" id= "level18">30</td>
+  <td class="">8</td>
+  <td class="" id = "num18"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img19" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_def.gif" width="30" height="30" class="iimg" alt="Runescape Image for Defence potion"/></td>
+  <td class="">Defence potion</td>
+  <td class="" id= "level19">30</td>
+  <td class="">75</td>
+  <td class="" id = "num19"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img20" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/def_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Defence mix"/></td>
+  <td class="">Defence mix</td>
+  <td class="" id= "level20">33</td>
+  <td class="">25</td>
+  <td class="" id = "num20"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img21" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_agil.gif" width="30" height="30" class="iimg" alt="Runescape Image for Agility potion"/></td>
+  <td class="">Agility potion</td>
+  <td class="" id= "level21">34</td>
+  <td class="">80</td>
+  <td class="" id = "num21"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img22" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_combat.gif" width="30" height="30" class="iimg" alt="Runescape Image for Combat potion"/></td>
+  <td class="">Combat potion</td>
+  <td class="" id= "level22">36</td>
+  <td class="">84</td>
+  <td class="" id = "num22"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img23" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/agility_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Agility mix"/></td>
+  <td class="">Agility mix</td>
+  <td class="" id= "level23">37</td>
+  <td class="">27</td>
+  <td class="" id = "num23"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img24" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_prayer.gif" width="30" height="30" class="iimg" alt="Runescape Image for Prayer potion"/></td>
+  <td class="">Prayer potion</td>
+  <td class="" id= "level24">38</td>
+  <td class="">87.5</td>
+  <td class="" id = "num24"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img25" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/HIrit.png" width="30" height="30" class="iimg" alt="Runescape Image for Clean Irit leaf"/></td>
+  <td class="">Clean Irit leaf</td>
+  <td class="" id= "level25">40</td>
+  <td class="">9</td>
+  <td class="" id = "num25"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img26" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/combat_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Combat mix"/></td>
+  <td class="">Combat mix</td>
+  <td class="" id= "level26">40</td>
+  <td class="">28</td>
+  <td class="" id = "num26"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img27" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pray_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Restore prayer mix"/></td>
+  <td class="">Restore prayer mix</td>
+  <td class="" id= "level27">42</td>
+  <td class="">29</td>
+  <td class="" id = "num27"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img28" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_supatt.gif" width="30" height="30" class="iimg" alt="Runescape Image for Super attack potion"/></td>
+  <td class="">Super attack potion</td>
+  <td class="" id= "level28">45</td>
+  <td class="">100</td>
+  <td class="" id = "num28"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img29" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/satt_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Super attack mix"/></td>
+  <td class="">Super attack mix</td>
+  <td class="" id= "level29">47</td>
+  <td class="">33</td>
+  <td class="" id = "num29"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img30" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/HAvantoe.png" width="30" height="30" class="iimg" alt="Runescape Image for Clean Avantoe"/></td>
+  <td class="">Clean Avantoe</td>
+  <td class="" id= "level30">48</td>
+  <td class="">10</td>
+  <td class="" id = "num30"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img31" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_supanti.gif" width="30" height="30" class="iimg" alt="Runescape Image for Super antipoison"/></td>
+  <td class="">Super antipoison</td>
+  <td class="" id= "level31">48</td>
+  <td class="">106</td>
+  <td class="" id = "num31"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img32" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_fish.gif" width="30" height="30" class="iimg" alt="Runescape Image for Fishing potion"/></td>
+  <td class="">Fishing potion</td>
+  <td class="" id= "level32">50</td>
+  <td class="">113</td>
+  <td class="" id = "num32"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img33" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/santi_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Super anti-poison mix"/></td>
+  <td class="">Super anti-poison mix</td>
+  <td class="" id= "level33">51</td>
+  <td class="">35</td>
+  <td class="" id = "num33"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img34" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_supnrg.gif" width="30" height="30" class="iimg" alt="Runescape Image for Super energy potion"/></td>
+  <td class="">Super energy potion</td>
+  <td class="" id= "level34">52</td>
+  <td class="">117.5</td>
+  <td class="" id = "num34"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img35" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/fishing_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Fishing mix"/></td>
+  <td class="">Fishing mix</td>
+  <td class="" id= "level35">53</td>
+  <td class="">38</td>
+  <td class="" id = "num35"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img36"/ class="rimg"></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_hunter.gif" width="30" height="30" class="iimg" alt="Runescape Image for Hunter potion"/></td>
+  <td class="">Hunter potion</td>
+  <td class="" id= "level36">53</td>
+  <td class="">120</td>
+  <td class="" id = "num36"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img37" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/HKwuarm.png" width="30" height="30" class="iimg" alt="Runescape Image for Clean Kwuarm"/></td>
+  <td class="">Clean Kwuarm</td>
+  <td class="" id= "level37">54</td>
+  <td class="">11.25</td>
+  <td class="" id = "num37"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img38" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_supstr.gif" width="30" height="30" class="iimg" alt="Runescape Image for Super Strength potion"/></td>
+  <td class="">Super Strength potion</td>
+  <td class="" id= "level38">55</td>
+  <td class="">125</td>
+  <td class="" id = "num38"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img39" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/senergy_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Super energy mix"/></td>
+  <td class="">Super energy mix</td>
+  <td class="" id= "level39">56</td>
+  <td class="">39</td>
+  <td class="" id = "num39"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img40" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_magess.png" width="30" height="30" class="iimg" alt="Runescape Image for Magic Essence potion"/></td>
+  <td class="">Magic Essence potion</td>
+  <td class="" id= "level40">57</td>
+  <td class="">130</td>
+  <td class="" id = "num40"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img41" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/hunter_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Hunter mix"/></td>
+  <td class="">Hunter mix</td>
+  <td class="" id= "level41">58</td>
+  <td class="">40</td>
+  <td class="" id = "num41"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img42" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/HSnapdragon.png" width="30" height="30" class="iimg" alt="Runescape Image for Clean Snapdragon"/></td>
+  <td class="">Clean Snapdragon</td>
+  <td class="" id= "level42">59</td>
+  <td class="">11.8</td>
+  <td class="" id = "num42"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img43" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/sstr_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Super strength mix"/></td>
+  <td class="">Super strength mix</td>
+  <td class="" id= "level43">59</td>
+  <td class="">42</td>
+  <td class="" id = "num43"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img44" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/Potion_Weapon Poison.png" width="30" height="30" class="iimg" alt="Runescape Image for Weapon poison"/></td>
+  <td class="">Weapon poison</td>
+  <td class="" id= "level44">60</td>
+  <td class="">137.5</td>
+  <td class="" id = "num44"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img45" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/magic_essmix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Magic essence mix"/></td>
+  <td class="">Magic essence mix</td>
+  <td class="" id= "level45">61</td>
+  <td class="">42</td>
+  <td class="" id = "num45"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img46" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_suprestore.gif" width="30" height="30" class="iimg" alt="Runescape Image for Super restore potion"/></td>
+  <td class="">Super restore potion</td>
+  <td class="" id= "level46">63</td>
+  <td class="">142</td>
+  <td class="" id = "num46"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img47" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/HCadantine.png" width="30" height="30" class="iimg" alt="Runescape Image for Clean Cadantine"/></td>
+  <td class="">Clean Cadantine</td>
+  <td class="" id= "level47">65</td>
+  <td class="">12.5</td>
+  <td class="" id = "num47"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img48" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_sanfewserum.png" width="30" height="30" class="iimg" alt="Runescape Image for Sanfew Serum"/></td>
+  <td class="">Sanfew Serum</td>
+  <td class="" id= "level48">65</td>
+  <td class="">160</td>
+  <td class="" id = "num48"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img49" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_supdef.gif" width="30" height="30" class="iimg" alt="Runescape Image for Super defence Potion"/></td>
+  <td class="">Super defence Potion</td>
+  <td class="" id= "level49">66</td>
+  <td class="">150</td>
+  <td class="" id = "num49"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img50" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/HLantadyme.png" width="30" height="30" class="iimg" alt="Runescape Image for Clean Lantadyme"/></td>
+  <td class="">Clean Lantadyme</td>
+  <td class="" id= "level50">67</td>
+  <td class="">13</td>
+  <td class="" id = "num50"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img51" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/srestore_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Super restore mix"/></td>
+  <td class="">Super restore mix</td>
+  <td class="" id= "level51">67</td>
+  <td class="">48</td>
+  <td class="" id = "num51"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img52" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_antifire.gif" width="30" height="30" class="iimg" alt="Runescape Image for Anti-fire breath Potion"/></td>
+  <td class="">Anti-fire breath Potion</td>
+  <td class="" id= "level52">69</td>
+  <td class="">158</td>
+  <td class="" id = "num52"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img53" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/HDwarfweed.png" width="30" height="30" class="iimg" alt="Runescape Image for Clean Dwarf weed"/></td>
+  <td class="">Clean Dwarf weed</td>
+  <td class="" id= "level53">70</td>
+  <td class="">13.75</td>
+  <td class="" id = "num53"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img54" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/sdef_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Super defence mix"/></td>
+  <td class="">Super defence mix</td>
+  <td class="" id= "level54">71</td>
+  <td class="">50</td>
+  <td class="" id = "num54"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img55" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_ranged.gif" width="30" height="30" class="iimg" alt="Runescape Image for Ranging potion"/></td>
+  <td class="">Ranging potion</td>
+  <td class="" id= "level55">72</td>
+  <td class="">162.5</td>
+  <td class="" id = "num55"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img56" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/HTorstol.png" width="30" height="30" class="iimg" alt="Runescape Image for Clean Torstol"/></td>
+  <td class="">Clean Torstol</td>
+  <td class="" id= "level56">75</td>
+  <td class="">15</td>
+  <td class="" id = "num56"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img57" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/antidrag_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Anti fire-breath mix"/></td>
+  <td class="">Anti fire-breath mix</td>
+  <td class="" id= "level57">75</td>
+  <td class="">53</td>
+  <td class="" id = "num57"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img58" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_magic.gif" width="30" height="30" class="iimg" alt="Runescape Image for Magic potion"/></td>
+  <td class="">Magic potion</td>
+  <td class="" id= "level58">76</td>
+  <td class="">172.5</td>
+  <td class="" id = "num58"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img59" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_zam.gif" width="30" height="30" class="iimg" alt="Runescape Image for Zamorak potion"/></td>
+  <td class="">Zamorak potion</td>
+  <td class="" id= "level59">78</td>
+  <td class="">175</td>
+  <td class="" id = "num59"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img60" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/ranged_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Ranged mix"/></td>
+  <td class="">Ranged mix</td>
+  <td class="" id= "level60">80</td>
+  <td class="">54</td>
+  <td class="" id = "num60"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img61" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/pot_sarabrew.gif" width="30" height="30" class="iimg" alt="Runescape Image for Saradomin brew"/></td>
+  <td class="">Saradomin brew</td>
+  <td class="" id= "level61">81</td>
+  <td class="">180</td>
+  <td class="" id = "num61"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img62" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/magic_mix.gif" width="30" height="30" class="iimg" alt="Runescape Image for Magic mix"/></td>
+  <td class="">Magic mix</td>
+  <td class="" id= "level62">83</td>
+  <td class="">57</td>
+  <td class="" id = "num62"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img63" class="rimg"/></td>
+  <td class="" valign="middle"><img src="../css/images/herblore/zam_mix.png" width="30" height="30" class="iimg" alt="Runescape Image for Zamorak mix"/></td>
+  <td class="">Zamorak mix</td>
+  <td class="" id= "level63">85</td>
+  <td class="">58</td>
+  <td class="" id = "num63"></td>
+  </tr>
+  <tr>
+  <td class=""><img src="../css/images/no.gif" id = "img64" class="rimg"/></td>
+  <td class="" valign="middle"><img src="/img/calcimg/" width="30" height="30" class="iimg" alt="Runescape Image for Super combat potion"/></td>
+  <td class="">Super combat potion</td>
+  <td class="" id= "level64">90</td>
+  <td class="">150</td>
+  <td class="" id = "num64"></td>
+  </tr>
+  </table>
+  </td></tr></table>
+  </td></tr></table>    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- <script src="../js/Calc.js"></script> -->
+    <!-- Begin calculation script here -->
+    <script>
+      // Start responding to the hiscores button when the page loads
+      $(document).ready(() => {
+        $('#hiscores').submit(retrieveScores);
+      });
+
+      //handler for submit of hiscores username
+      const retrieveScores = (event) => {
+        //Don't do what a submit normally would, which includes a page reload
+        event.preventDefault();
+        let username = $('#username').val();
+        $.ajax({
+          url: `../hiscores?username=${username}`
+        }).done((data) => {
+          if (data.status !== 200) {
+            alert('Invalid username!');
+          } else {
+            let stats = data.response;
+            let herby = stats.herblore;
+            // console.log(stats, fm);
+            $('#current').val(herby.xp);
+          }
+        }).fail((err) => {
+          if (err) {
+            err = JSON.stringify(err, 2, null);
+            console.log(`error: ${err}`);
+          }
+        });
+      };
+
+
+    var levelAmounts;
+    $.ajax({
+      url: '../xp'
+    }).done((data) => {
+      levelAmounts = JSON.parse(data);
+    })
+    var xpAmounts = {
+      cleanGuam: 2.5,
+      attackPot: 25,
+      attackMix: 8,
+      cleanMarr: 3.75,
+      antipoison: 37.5,
+      relicymsBalm: 40,
+      rBalmMix: 14,
+      cleanTarr: 5,
+      strPot: 50,
+      strMix: 17,
+      serum207: 50,
+      cleanHarr: 6.5,
+      restorePot: 62.5,
+      restoreMix: 21,
+      cleanRanarr: 7.5,
+      energyPot: 67.5,
+      cleanToadflax: 8,
+      defPot: 25,
+      agilityPot: 80,
+      cbPot: 84,
+      agilityMix: 27,
+      prayerPot: 87.5,
+      cleanIrit: 9,
+      cbMix: 28,
+      restorePrayerMix: 29,
+      superAttPot: 100,
+      superAttMix: 33,
+      cleanAvantoe: 10,
+      superAnti: 106,
+      fishingPot: 113,
+      superAntiMix: 35,
+      superEnergy: 117.5,
+      fishingMix: 38,
+      hunterPot: 120,
+      cleanKwuarm: 11.25,
+      superStr: 125,
+      superEnergyMix: 39,
+      magicEssPot: 130,
+      hunterMix: 40,
+      cleanSnapdragon: 11.8,
+      superStrMix: 42,
+      weaponPoison: 137.5,
+      magicEssMix: 42,
+      superRestore: 142,
+      cleanCadantine: 12.5,
+      sanfewSerum: 160,
+      superDef: 150,
+      cleanLantadyme: 13,
+      superRestoreMix: 48,
+      antiFire: 158,
+      cleanDwarfWeed: 13.75,
+      superDefMix: 50,
+      rangingPot: 162.5,
+      cleanTorstol: 15,
+      antiFireMix: 53,
+      magicPot: 172.5,
+      zamorakPot: 175,
+      rangedMix: 54,
+      saraBrew: 180,
+      magicMix: 57,
+      zamorakMix: 58,
+      superCBPot: 150
+    };
+
+
+
+    function calculate(){
+      var error = false
+      var currentXP = document.getElementById('current').value;
+      var targetLvl = parseInt(document.getElementById('target').value,10);
+      var currentLvl = parseInt(getLevel(currentXP),10);
+      var targetXP= levelAmounts[targetLvl];
+
+      var neededXP = targetXP - currentXP;
+      if(!isNaN(currentXP) && !isNaN(targetLvl) && (targetLvl > currentLvl) && currentXP < 13034431){
+        document.getElementById('textReport').innerHTML = "You need <b>" + neededXP + "</b> XP to level up from level <b>" + currentLvl + "</b> to level <b>"+ targetLvl + "</b>" ;
+        var firstRun = true;
+        for(var log in xpAmounts){
+            if(firstRun){
+              i=0;
+            }
+          var id = "num" + i;
+          i=i+1;
+
+        document.getElementById(id).innerHTML = getNumber(xpAmounts[log], currentXP, targetXP);
+        firstRun = false;
+
+      }
+
+        //change the 'x' to a check if the user is over the level for each specific type of item
+        for(i=0; i<65; i++){
+          var itemLevel = "level" + i;
+          var image = "img" + i;
+          //console.log(document.getElementById(itemLevel).innerHTML);
+          //console.log(currentLvl);
+          //console.log(currentLvl >= parseInt(document.getElementById(itemLevel).innerHTML,10));
+
+          //if user's level is higher than the item level, change the 'x' to a check
+          if(currentLvl >= parseInt(document.getElementById(itemLevel).innerHTML,10)){
+
+              document.getElementById(image).src= "../css/images/yes.gif";
+            }
+            //make sure it can go back to an 'x' if they enter a lower level
+            else{
+                document.getElementById(image).src= "../css/images/no.gif";
+              }
+            }
+          }
+      //if currentXP is over the amount needed for 99, then the user cannot get a level up
+      else if(currentXP >= 13034431 && !isNaN(currentXP) && !isNaN(targetLvl)){
+          document.getElementById('textReport').innerHTML = "You already have 99!";
+      }
+      //if the inputs are numbers but target < current
+      else if(!isNaN(currentXP) && !isNaN(targetLvl) && (targetLvl < currentLvl)){
+        document.getElementById('textReport').innerHTML = "Your target level is lower than your current level";
+      }
+      //if the inputs aren't numbers
+      else{
+          document.getElementById('textReport').innerHTML = "Please enter numbers";
+      }
+    }
+
+
+    function getLevel(XP){
+      var cLevel = 1;
+      if(XP < 13034431){
+      for(var key in levelAmounts){
+        if(levelAmounts[key] <= XP){
+          cLevel = key
+        }
+      }
+
+      }
+      else{
+        cLevel = 99;
+      }
+      return cLevel;
+    }
+
+    // function to determine how many of each log one would need to burn to reach target level
+    function getNumber(xp,current,target){
+      //console.log(xp, current, target);
+      return Math.ceil((target-current)/xp);
+    }
+
+</script>
+
+  </body>
+</html>
