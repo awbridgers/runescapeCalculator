@@ -10,8 +10,7 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>Runescape Calculator</title>
-    <!--embed src="rstheme.mp3" autostart="false" loop="true"
-    width="2" height="0"-->
+
     <embed src="rstheme.mp3" autostart="true" loop="true">
 
     </embed>
@@ -74,12 +73,16 @@
 
 
     <!-- Begin links to individual skill calcs here -->
-    <div class = 'starter-template'>
+    <div class = 'starter-template'>    <!-- FIXME: For the time being this DIV is ok, but when more skills are added they will line up properly when it is removed -->
       <table id = 'skills'>
         <tr><td>
           <a href = "#" title = "Runescape Firemaking Calculator" onclick = "begin()">
           <img src = "css/images/firemaking.gif" />Firemaking</a>
           <audio id="sound1" src="fire.wav" preload="auto"></audio>
+        </tr>
+        <tr><td>
+          <a href= 'skills/herblore.html' title = 'Runescape Herblore Calculator'>
+            <img src = 'css/images/Herblore.gif' />Herblore</a>
 
 
     <!-- Bootstrap core JavaScript
