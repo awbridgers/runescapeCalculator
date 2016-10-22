@@ -92,11 +92,12 @@
         <audio id = "i3" src="effects/ice3.mp3" preload="auto"></audio>
         <audio id = "i4" src="effects/ice4.mp3" preload="auto"></audio>
 
-          <audio id="sound1" src="fire.wav" preload="auto"></audio>
+
         </tr>
         <tr><td>
-          <a href= 'skills/herblore.html' title = 'Runescape Herblore Calculator'>
+          <a href= '#' title = 'Runescape Herblore Calculator' onclick = "letsago()">
             <img src = 'css/images/Herblore.gif' />Herblore</a>
+            <audio id = "hs" src = "effects/herb.mp3" preload="auto"></audio>
 
 
 
@@ -123,6 +124,10 @@
     else if (x > 2 && x < 3){document.getElementById('i1').play();}
     else if (x > 3 && x < 4){document.getElementById('i2').play();}
     else if (x > 4){document.getElementById('i4').play();}
+  }
+  function letsago(){
+    document.getElementById('hs').play();
+    var timer = setTimeout(function wahoo(){window.location.assign("skills/herblore.html")},1750);
   }
 </script>
   </body>
