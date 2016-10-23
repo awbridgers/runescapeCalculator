@@ -71,9 +71,13 @@ app.get('/hiscores', (req, res) => {
       console.log(`failed to retrieve scores for user ${player} - ${err}`);
       res.send(err);
     } else {
-      // console.log(Object.keys(response));
-      // console.log(response.statusCode);
-      res.send({status: 200, response: stats});
+			if (player === 'Nihilus RS') {
+				stats.magic.xp = '0 (botted)';
+				stats.strength.xp = '0 (botted)';
+				stats.attack.xp = '0 (botted)';
+				stats.fishing.xp = '0 (botted)';
+			}
+			res.send({status: 200, response: stats});
     }
   });
   // let url = `http://hiscore.runescape.com/index_lite.ws?player=${player}`; //rs3 hiscores
