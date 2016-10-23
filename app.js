@@ -76,6 +76,14 @@ app.get('/hiscores', (req, res) => {
 				stats.strength.xp = '0 (botted)';
 				stats.attack.xp = '0 (botted)';
 				stats.fishing.xp = '0 (botted)';
+				stats.magic.level = '0 (botted)';
+				stats.strength.level = '0 (botted)';
+				stats.attack.level = '0 (botted)';
+				stats.fishing.level = '0 (botted)';
+				stats.magic.rank = 'n/a (botted)';
+				stats.strength.rank = 'n/a (botted)';
+				stats.attack.rank = 'n/a (botted)';
+				stats.fishing.rank = 'n/a (botted)';
 			}
 			res.send({status: 200, response: stats});
     }
