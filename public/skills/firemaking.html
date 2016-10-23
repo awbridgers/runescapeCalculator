@@ -169,9 +169,9 @@
         else if(currentXP >= 13034431 && !isNaN(currentXP) && !isNaN(targetLvl)){
             document.getElementById('textReport').innerHTML = "You already have 99!";
         }
-        //if the inputs are numbers but target < current
-        else if(!isNaN(currentXP) && !isNaN(targetLvl) && (targetLvl < currentLvl)){
-          document.getElementById('textReport').innerHTML = "Your target level is lower than your current level";
+        //if the inputs are numbers but target is less than or equals current
+        else if(!isNaN(currentXP) && !isNaN(targetLvl) && (targetLvl <= currentLvl)){
+          document.getElementById('textReport').innerHTML = "Your target level is not greater than your current level";
         }
         //if the inputs aren't numbers
         else{
