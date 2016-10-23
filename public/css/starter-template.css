@@ -24,6 +24,8 @@ body {
 margin: 0 auto;
 width: 540px;
 border-collapse: collapse;
+position: absolute;
+left: 450px;
 }
 #skills strong {
 display: block;
@@ -32,6 +34,7 @@ text-align: center;
 #skills a {
 display: block;
 text-decoration: none;
+color: #FFFFFF
 }
 #skills td {
 vertical-align: top;
