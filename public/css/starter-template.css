@@ -87,3 +87,9 @@ i{
   top:20px;
 
 }
+.skillItem{
+border:1px solid #000;
+border-width:0 1px;
+width:30px;
+height:30px;
+}

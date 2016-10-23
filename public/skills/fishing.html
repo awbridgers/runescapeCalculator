@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Fishing Calculator</title>
+    <embed src="../rstheme.mp3" autostart="true" loop="true">
+    </embed>
+
+    <!-- Custom styles for this template -->
+    <link href="../css/starter-template.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div>
+      <a href = '../index.html' title = "Return to Homepage" id="returnHome"><img src = '..\css\images\Teleport_to_house_detail.png' height = '50' width = "50"/></a>
+    </div>
+    <div class="container">
+      <div class="starter-template">
+        <h1>Fishing Calculator</h1>
+      </div>
+    </div>
+
+    <div class="starter-template" align="centered" id="hiscores">
+      <h3> Import Hiscores </h3>
+      <form id="hiscores">
+        <input id=username type="text" placeholder="your username"></input>
+        <input type="submit">Get your stats!</input>
+      </form>
+    </div>
+
+    <div class = "starter-template">
+      <p><label for="inputMsg">Enter current XP here: <input type="text" name="currnet" id = 'current' value="" placeholder="Current XP"></p>
+      <p><label for="inputMsg">Enter target level here: <input type="text" name="target" id = 'target' value="" placeholder="Target Level"></p>
+      <p><button type="button" id="submitButton"  onclick="calculate()">Calculate!</button></p>
+      <p id = "textReport"><i>TEST</i></p>
+    </div>
+
+    <div class= "starter-template">
+      <table class="tbl" id="actions" cellspacing="0">
+        <thead><tr>
+          <th class="tabletop" width="20">&nbsp;</th>
+<th class="tabletop" width="20">&nbsp;</th>
+<th class="tabletop">Name</th>
+<th class="tabletop" width="40">Level</th>
+<th class="tabletop" width="40">XP</th>
+<th class="tabletop" width="100" id="last_th">Number</th>
+</tr></thead>
+<tbody>
+<tr class="" id="tr0"><td><img src="../css/images/yes.gif" id="image0" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/raw_shrimp.png" class="skillItem"/></td><td>Shrimp</td><td id="level0">1</td><td id="xp0">10</td><td id="num0"></td></tr>
+<tr class=" memb" id="tr1"><td><img src="../css/images/no.gif" id="image1" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw%20Karambwanji.png" class="skillItem"/></td><td>Karambwanji</td><td id="level1">5</td><td id="xp1">5</td><td id="num1"></td></tr>
+<tr class="" id="tr2"><td><img src="../css/images/no.gif" id="image2" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw_Sardine.png" class="skillItem"/></td><td>Sardine</td><td id="level2">5</td><td id="xp2">20</td><td id="num2"></td></tr>
+<tr class="Jewelry" id="tr3"><td><img src="../css/images/no.gif" id="image3" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw_Herring.png" class="skillItem"/></td><td>Herring</td><td id="level3">10</td><td id="xp3">30</td><td id="num3"></td></tr>
+<tr class="" id="tr4"><td><img src="../css/images/no.gif" id="image4" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/raw_anchovy.png" class="skillItem"/></td><td>Anchovy</td><td id="level4">15</td><td id="xp4">40</td><td id="num4"></td></tr>
+<tr class=" memb" id="tr5"><td><img src="../css/images/no.gif" id="image5" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw_Mackerel.png" class="skillItem"/></td><td>Mackerel</td><td id="level5">16</td><td id="xp5">20</td><td id="num5"></td></tr>
+<tr class="" id="tr6"><td><img src="../css/images/no.gif" id="image6" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw_Trout.png" class="skillItem"/></td><td>Trout</td><td id="level6">20</td><td id="xp6">50</td><td id="num6"></td></tr>
+<tr class=" memb" id="tr7"><td><img src="../css/images/no.gif" id="image7" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw_Cod.png" class="skillItem"/></td><td>Cod</td><td id="level7">23</td><td id="xp7">45</td><td id="num7"></td></tr>
+<tr class="" id="tr8"><td><img src="../css/images/no.gif" id="image8" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw_Pike.png" class="skillItem"/></td><td>Pike</td><td id="level8">25</td><td id="xp8">60</td><td id="num8"></td></tr>
+<tr class=" memb" id="tr9"><td><img src="../css/images/no.gif" id="image9" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/raw_slimyeel.png" class="skillItem"/></td><td>Slimey Eel</td><td id="level9">28</td><td id="xp9">65</td><td id="num9"></td></tr>
+<tr class="Net" id="tr10"><td><img src="../css/images/no.gif" id="image10" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw_salmon.png" class="skillItem"/></td><td>Salmon</td><td id="level10">30</td><td id="xp10">70</td><td id="num10"></td></tr>
+<tr class=" memb" id="tr11"><td><img src="../css/images/no.gif" id="image11" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/giant_frogspawn.png" class="skillItem"/></td><td>Giant frogspawn</td><td id="level11">33</td><td id="xp11">75</td><td id="num11"></td></tr>
+<tr class="" id="tr12"><td><img src="../css/images/no.gif" id="image12" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw_Tuna.png" class="skillItem"/></td><td>Tuna</td><td id="level12">35</td><td id="xp12">80</td><td id="num12"></td></tr>
+<tr class=" memb" id="tr13"><td><img src="../css/images/no.gif" id="image13" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/raw_rainbowfish.png" class="skillItem"/></td><td>Rainbow fish</td><td id="level13">38</td><td id="xp13">80</td><td id="num13"></td></tr>
+<tr class=" memb" id="tr14"><td><img src="../css/images/no.gif" id="image14" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/raw_caveeel.png" class="skillItem"/></td><td>Cave eel</td><td id="level14">38</td><td id="xp14">80</td><td id="num14"></td></tr>
+<tr class="Net" id="tr15"><td><img src="../css/images/no.gif" id="image15" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw_Lobster.png" class="skillItem"/></td><td>Lobster</td><td id="level15">40</td><td id="xp15">90</td><td id="num15"></td></tr>
+<tr class=" memb" id="tr16"><td><img src="../css/images/no.gif" id="image16" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw_Bass.png" class="skillItem"/></td><td>Bass</td><td id="level16">46</td><td id="xp16">100</td><td id="num16"></td></tr>
+<tr class="" id="tr17"><td><img src="../css/images/no.gif" id="image17" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw_swordfish.png" class="skillItem"/></td><td>Swordfish</td><td id="level17">50</td><td id="xp17">100</td><td id="num17"></td></tr>
+<tr class=" memb" id="tr18"><td><img src="../css/images/no.gif" id="image18" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw_Lava%20eel.png" class="skillItem"/></td><td>Lava eel</td><td id="level18">53</td><td id="xp18">60</td><td id="num18"></td></tr>
+<tr class=" memb" id="tr19"><td><img src="../css/images/no.gif" id="image19" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/raw_monkfish.png" class="skillItem"/></td><td>Monkfish</td><td id="level19">62</td><td id="xp19">120</td><td id="num19"></td></tr>
+<tr class=" memb" id="tr20"><td><img src="../css/images/no.gif" id="image20" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw_Karambwan.png" class="skillItem"/></td><td>Karambwan</td><td id="level20">65</td><td id="xp20">105</td><td id="num20"></td></tr>
+<tr class=" memb" id="tr21"><td><img src="../css/images/no.gif" id="image21" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw_Shark.png" class="skillItem"/></td><td>Shark</td><td id="level21">76</td><td id="xp21">110</td><td id="num21"></td></tr>
+<tr class=" memb" id="tr22"><td><img src="../css/images/no.gif" id="image22" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw_Seaturtle.png" class="skillItem"/></td><td>Sea turtle</td><td id="level22">79</td><td id="xp22">38</td><td id="num22"></td></tr>
+<tr class=" memb" id="tr23"><td><img src="../css/images/no.gif" id="image23" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fishing/Raw_Manta%20Ray.png" class="skillItem"/></td><td>Manta ray</td><td id="level23">81</td><td id="xp23">46</td><td id="num23"></td></tr>
+</tbody>
+</table>
+    </div>
+
+  </body>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Begin calculation script here -->
+  <script>
+      // Start responding to the hiscores button when the page loads
+      $(document).ready(() => {
+        $('#hiscores').submit(retrieveScores);
+      });
+
+      //handler for submit of hiscores username
+      const retrieveScores = (event) => {
+        //Don't do what a submit normally would, which includes a page reload
+        event.preventDefault();
+        let username = $('#username').val();
+        $.ajax({
+          url: `../hiscores?username=${username}`
+        }).done((data) => {
+          if (data.status !== 200) {
+            alert('Invalid username!');
+          } else {
+            let stats = data.response;
+            let fishy = stats.fishing;
+            // console.log(stats, fm);
+            $('#current').val(fishy.xp);
+          }
+        }).fail((err) => {
+          if (err) {
+            err = JSON.stringify(err, 2, null);
+            console.log(`error: ${err}`);
+          }
+        });
+      };
+
+      var levelAmounts;
+      $.ajax({
+        url: '../xp'
+      }).done((data) => {
+        levelAmounts = JSON.parse(data);
+      })
+      var xpAmounts = {
+        shrimp: 10,
+        karambwanji: 5,
+        sardine: 20,
+        herring: 30,
+        anchovy: 40,
+        mackerel: 20,
+        trout: 50,
+        cod: 45,
+        pike: 60,
+        slimeyEel: 65,
+        salmon: 70,
+        giantFrogspawn: 75,
+        tuna: 80,
+        rainbowFish: 80,
+        caveEel: 80,
+        lobster: 90,
+        bass: 100,
+        swordfish: 100,
+        lavaEel: 60,
+        monkfish: 120,
+        karambwan: 105,
+        shark: 110,
+        seaTurtle: 38,
+        mantaRay: 46
+
+      };
+
+      function calculate(){
+        var error = false
+        var currentXP = document.getElementById('current').value;
+        var targetLvl = parseInt(document.getElementById('target').value,10);
+        var currentLvl = parseInt(getLevel(currentXP),10);
+        var targetXP= levelAmounts[targetLvl];
+
+        var neededXP = targetXP - currentXP;
+        if(!isNaN(currentXP) && !isNaN(targetLvl) && (targetLvl > currentLvl) && currentXP < 13034431){
+          document.getElementById('textReport').innerHTML = "You need <b>" + neededXP + "</b> XP to level up from level <b>" + currentLvl + "</b> to level <b>"+ targetLvl + "</b>" ;
+          var firstRun = true;
+          for(var log in xpAmounts){
+              if(firstRun){
+                i=0;
+              }
+            var id = "num" + i;
+            i=i+1;
+
+          document.getElementById(id).innerHTML = getNumber(xpAmounts[log], currentXP, targetXP);
+          firstRun = false;
+
+        }
+
+          //change the 'x' to a check if the user is over the level for each specific type of item
+          i=0;
+          for(var key in xpAmounts){
+            var itemLevel = "level" + i;
+            var image = "image" + i;
+            i++;
+            //console.log(document.getElementById(itemLevel).innerHTML);
+            //console.log(currentLvl);
+            //console.log(currentLvl >= parseInt(document.getElementById(itemLevel).innerHTML,10));
+
+            //if user's level is higher than the item level, change the 'x' to a check
+            if(currentLvl >= parseInt(document.getElementById(itemLevel).innerHTML,10)){
+
+                document.getElementById(image).src= "../css/images/yes.gif";
+              }
+              //make sure it can go back to an 'x' if they enter a lower level
+              else{
+                  document.getElementById(image).src= "../css/images/no.gif";
+                }
+              }
+            }
+        //if currentXP is over the amount needed for 99, then the user cannot get a level up
+        else if(currentXP >= 13034431 && !isNaN(currentXP) && !isNaN(targetLvl)){
+            document.getElementById('textReport').innerHTML = "You already have 99!";
+        }
+        //if the inputs are numbers but target is less than or equals current
+        else if(!isNaN(currentXP) && !isNaN(targetLvl) && (targetLvl <= currentLvl)){
+          document.getElementById('textReport').innerHTML = "Your target level is not greater than your current level";
+        }
+        //if the inputs aren't numbers
+        else{
+            document.getElementById('textReport').innerHTML = "Please enter numbers";
+        }
+      }
+
+      function getLevel(XP){
+        var cLevel = 1;
+        if(XP < 13034431){
+        for(var key in levelAmounts){
+          if(levelAmounts[key] <= XP){
+            cLevel = key
+          }
+        }
+
+        }
+        else{
+          cLevel = 99;
+        }
+        return cLevel;
+      }
+
+      // function to determine how many of each log one would need to burn to reach target level
+      function getNumber(xp,current,target){
+        console.log(xp, current, target);
+        return Math.ceil((target-current)/xp);
+      }
+
+  </script>
+
+</html>
