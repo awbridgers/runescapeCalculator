@@ -132,6 +132,9 @@
         var currentLvl = parseInt(getLevel(currentXP),10);
         var targetXP= levelAmounts[targetLvl];
 
+        //show current level here
+        document.getElementById('yourLevel').innerHTML =  "(Level " + currentLvl + ")";
+
         var neededXP = targetXP - currentXP;
         if(!isNaN(currentXP) && !isNaN(targetLvl) && (targetLvl > currentLvl) && currentXP < 13034431){
           document.getElementById('textReport').innerHTML = "You need <b>" + neededXP + "</b> XP to level up from level <b>" + currentLvl + "</b> to level <b>"+ targetLvl + "</b>" ;
