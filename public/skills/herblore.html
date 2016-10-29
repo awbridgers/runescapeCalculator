@@ -707,7 +707,7 @@
       document.getElementById('yourLevel').innerHTML =  "(Level " + currentLvl + ")";
 
       var neededXP = targetXP - currentXP;
-      if(!isNaN(currentXP) && !isNaN(targetLvl) && (targetLvl > currentLvl) && currentXP < 13034431 && targetLvl < 100){
+      if(!isNaN(currentXP) && !isNaN(targetLvl) && (targetLvl > currentLvl) && currentXP < 13034431 && targetLvl < 100 && currentXP >=0){
         document.getElementById('textReport').innerHTML = "You need <b>" + neededXP + "</b> XP to level up from level <b>" + currentLvl + "</b> to level <b>"+ targetLvl + "</b>" ;
         var firstRun = true;
         for(var log in xpAmounts){
@@ -742,16 +742,20 @@
         }
       }
       //if currentXP is over the amount needed for 99, then the user cannot get a level up
-      else if(currentXP >= 13034431 && !isNaN(currentXP) && !isNaN(targetLvl)&& targetLvl < 100){
+      else if(currentXP >= 13034431 && !isNaN(currentXP) && !isNaN(targetLvl)&& targetLvl < 100  && currentXP >=0){
         document.getElementById('textReport').innerHTML = "You already have 99!";
       }
       //if the inputs are numbers but target < current
-      else if(!isNaN(currentXP) && !isNaN(targetLvl) && (targetLvl < currentLvl)&& targetLvl < 100){
+      else if(!isNaN(currentXP) && !isNaN(targetLvl) && (targetLvl < currentLvl)&& targetLvl < 100 && currentXP >=0){
         document.getElementById('textReport').innerHTML = "Your target level must be greater than your current level";
       }
       //if the target level is above 99
-      else if(targetLvl >= 100){
+      else if(targetLvl >= 100 && currentXP >=0){
         document.getElementById('textReport').innerHTML = "Please enter a target level lower than 100";
+      }
+      //if the currentXP is a negative number
+      else if(currentXP < 0){
+        document.getElementById('textReport').innerHTML = "Current XP must be greater than 0";
       }
       //if the inputs aren't numbers
       else{
