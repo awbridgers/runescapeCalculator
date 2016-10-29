@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Fletching Calculator</title>
+    <!-- <embed src="../rstheme.mp3" autostart="true" loop="true">
+    </embed> -->
+
+    <!-- Custom styles for this template -->
+    <link href="../css/starter-template.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div>
+      <a href = '../index.html' title = "Return to Homepage" id="returnHome"><img src = '..\css\images\Teleport_to_house_detail.png' height = '50' width = "50"/></a>
+    </div>
+    <div class="container">
+      <div class="starter-template">
+        <h1>Fletching Calculator</h1>
+      </div>
+    </div>
+
+    <div class="starter-template" align="centered" id="hiscores">
+      <h3> Import Hiscores </h3>
+      <form id="hiscores">
+        <input id=username type="text" placeholder="your username"></input>
+        <input type="submit">Get your stats!</input>
+      </form>
+    </div>
+
+    <div class = "starter-template">
+      <p><label for="inputMsg">Enter current XP here: <input type="text" name="current" id = 'current' value="" placeholder="Current XP"> <h5 id = "yourLevel"><i>TEST</i></h5></p>
+      <p><label for="inputMsg">Enter target level here: <input type="text" name="target" id = 'target' value="" placeholder="Target Level"></p>
+      <p><button type="button" id="submitButton"  onclick="calculate()">Calculate!</button></p>
+      <p id = "textReport"><i>TEST</i></p>
+    </div>
+    <div class= "starter-template">
+      <table class="tbl" id="actions" cellspacing="0">
+        <thead><tr>
+          <th class="tabletop" width="20">&nbsp;</th>
+<th class="tabletop" width="20">&nbsp;</th>
+<th class="tabletop">Name</th>
+<th class="tabletop" width="40">Level</th>
+<th class="tabletop" width="40">XP</th>
+<th class="tabletop" width="100" id="last_th">Number</th>
+</tr></thead>
+<tbody>
+  <tr id="tr0"><td><img src="../css/images/yes.gif" id="image0" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/arrowshafts.png" class="skillItem"/></td><td>Arrow shaft</td><td id="level0">1</td><td >0.33</td><td id="num0"></td></tr>
+  <tr id="tr1"><td><img src="../css/images/no.gif" id="image1" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Headless%20Arrows.png" class="skillItem"/></td><td>Headless arrow </td><td id="level1">1</td><td >1</td><td id="num1"></td></tr>
+  <tr id="tr2"><td><img src="../css/images/no.gif" id="image2" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Dart_Bronze.png" class="skillItem"/></td><td>Bronze dart</td><td id="level2">1</td><td >1.8</td><td id="num2"></td></tr>
+  <tr id="tr3"><td><img src="../css/images/no.gif" id="image3" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/arrow_bronze.png" class="skillItem"/></td><td>Bronze arrow</td><td id="level3">1</td><td >2.63</td><td id="num3"></td></tr>
+  <tr id="tr4"><td><img src="../css/images/no.gif" id="image4" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/shortbowu.png" class="skillItem"/></td><td>Shortbow (u)</td><td id="level4">5</td><td >5</td><td id="num4"></td></tr>
+  <tr id="tr5"><td><img src="../css/images/no.gif" id="image5" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Shortbow.png" class="skillItem"/></td><td>Shortbow</td><td id="level5">5</td><td >10</td><td id="num5"></td></tr>
+  <tr id="tr6"><td><img src="../css/images/no.gif" id="image6" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/brutal_bronze.png" class="skillItem"/></td><td>Bronze brutal arrow</td><td id="level6">7</td><td >1.5</td><td id="num6"></td></tr>
+  <tr id="tr7"><td><img src="../css/images/no.gif" id="image7" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/crossbow_bronze.png" class="skillItem"/></td><td>Bronze crossbow</td><td id="level7">9</td><td >24</td><td id="num7"></td></tr>
+  <tr id="tr8"><td><img src="../css/images/no.gif" id="image8" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/bolt_bronze.png" class="skillItem"/></td><td>Bronze bolt</td><td id="level8">9</td><td >0.5</td><td id="num8"></td></tr>
+  <tr id="tr9"><td><img src="../css/images/no.gif" id="image9" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/longbowu.png" class="skillItem"/></td><td>Longbow (u)</td><td id="level9">10</td><td >10</td><td id="num9"></td></tr>
+  <tr id="tr10"><td><img src="../css/images/no.gif" id="image10" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Longbow.png" class="skillItem"/></td><td>Longbow</td><td id="level10">10</td><td >20</td><td id="num10"></td></tr>
+  <tr id="tr11"><td><img src="../css/images/no.gif" id="image11" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/bolt_opal.png" class="skillItem"/></td><td>Opal bolts</td><td id="level11">11</td><td >1.6</td><td id="num11"></td></tr>
+  <tr id="tr12"><td><img src="../css/images/no.gif" id="image12" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/arrow_iron.png" class="skillItem"/></td><td>Iron arrow</td><td id="level12">15</td><td >3.83</td><td id="num12"></td></tr>
+  <tr id="tr13"><td><img src="../css/images/no.gif" id="image13" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/brutal_iron.png" class="skillItem"/></td><td>Iron brutal arrow</td><td id="level13">18</td><td >2.6</td><td id="num13"></td></tr>
+  <tr id="tr14"><td><img src="../css/images/no.gif" id="image14" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/shortbowu.png" class="skillItem"/></td><td>Oak shortbow (u)</td><td id="level14">20</td><td >16.5</td><td id="num14"></td></tr>
+  <tr id="tr15"><td><img src="../css/images/no.gif" id="image15" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Shortbow_Oak.png" class="skillItem"/></td><td>Oak shortbow</td><td id="level15">20</td><td >33</td><td id="num15"></td></tr>
+  <tr id="tr16"><td><img src="../css/images/no.gif" id="image16" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Dart_Iron.png" class="skillItem"/></td><td>Iron dart</td><td id="level16">22</td><td >3.2</td><td id="num16"></td></tr>
+  <tr id="tr17"><td><img src="../css/images/no.gif" id="image17" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/crossbow_blurite.png" class="skillItem"/></td><td>Blurite crossbow</td><td id="level17">24</td><td >64</td><td id="num17"></td></tr>
+  <tr id="tr18"><td><img src="../css/images/no.gif" id="image18" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/longbow_oaku.png" class="skillItem"/></td><td>Oak longbow (u)</td><td id="level18">25</td><td >25</td><td id="num18"></td></tr>
+  <tr id="tr19"><td><img src="../css/images/no.gif" id="image19" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Longbow_Oak.png" class="skillItem"/></td><td>Oak longbow</td><td id="level19">25</td><td >50</td><td id="num19"></td></tr>
+  <tr id="tr20"><td><img src="../css/images/no.gif" id="image20" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/bolt_jade.png" class="skillItem"/></td><td>Jade bolt</td><td id="level20">26</td><td >2.4</td><td id="num20"></td></tr>
+  <tr id="tr23"><td><img src="../css/images/no.gif" id="image23" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/comp bowu.png" class="skillItem"/></td><td>Composite ogre bow (u)</td><td id="level21">30</td><td >45.5</td><td id="num21"></td></tr>
+  <tr id="tr21"><td><img src="../css/images/no.gif" id="image21" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/comp ogre_bow.png" class="skillItem"/></td><td>Composite ogre bow</td><td id="level22">30</td><td >90</td><td id="num22"></td></tr>
+  <tr id="tr22"><td><img src="../css/images/no.gif" id="image22" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/arrow_steel.png" class="skillItem"/></td><td>Steel arrow</td><td id="level23">30</td><td >6.33</td><td id="num23"></td></tr>
+  <tr id="tr24"><td><img src="../css/images/no.gif" id="image24" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/brutal_steel.png" class="skillItem"/></td><td>Steel brutal arrow</td><td id="level24">33</td><td >5.2</td><td id="num24"></td></tr>
+  <tr id="tr26"><td><img src="../css/images/no.gif" id="image26" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/shortbow_willowu.png" class="skillItem"/></td><td>Willow shortbow (u)</td><td id="level25">35</td><td >33.25</td><td id="num25"></td></tr>
+  <tr id="tr25"><td><img src="../css/images/no.gif" id="image25" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Shortbow_Willow.png" class="skillItem"/></td><td>Willow shortbow</td><td id="level26">35</td><td >66.5</td><td id="num26"></td></tr>
+  <tr id="tr27"><td><img src="../css/images/no.gif" id="image27" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Dart_Steel.png" class="skillItem"/></td><td>Steel dart</td><td id="level27">37</td><td >7.5</td><td id="num27"></td></tr>
+  <tr id="tr28"><td><img src="../css/images/no.gif" id="image28" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/brutal_black.png" class="skillItem"/></td><td>Black brutal arrow</td><td id="level28">38</td><td >6.3</td><td id="num28"></td></tr>
+  <tr id="tr29"><td><img src="../css/images/no.gif" id="image29" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/bolt_iron.png" class="skillItem"/></td><td>Iron bolt</td><td id="level29">39</td><td >1.9</td><td id="num29"></td></tr>
+  <tr id="tr30"><td><img src="../css/images/no.gif" id="image30" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/crossbow_iron.png" class="skillItem"/></td><td>Iron crossbow</td><td id="level30">39</td><td >88</td><td id="num30"></td></tr>
+  <tr id="tr32"><td><img src="../css/images/no.gif" id="image32" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/longbow_willowu.png" class="skillItem"/></td><td>Willow longbow (u)</td><td id="level31">40</td><td >41.5</td><td id="num31"></td></tr>
+  <tr id="tr31"><td><img src="../css/images/no.gif" id="image31" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Longbow_Willow.png" class="skillItem"/></td><td>Willow longbow</td><td id="level32">40</td><td >83</td><td id="num32"></td></tr>
+  <tr id="tr33"><td><img src="../css/images/no.gif" id="image33" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/bolt_pearl.png" class="skillItem"/></td><td>Pearl bolt</td><td id="level33">41</td><td >3.2</td><td id="num33"></td></tr>
+  <tr id="tr34"><td><img src="../css/images/no.gif" id="image34" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/arrow_mithril.png" class="skillItem"/></td><td>Mithril arrow</td><td id="level34">45</td><td >8.83</td><td id="num34"></td></tr>
+  <tr id="tr35"><td><img src="../css/images/no.gif" id="image35" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/bolt_steel.png" class="skillItem"/></td><td>Steel bolt</td><td id="level35">46</td><td >3.5</td><td id="num35"></td></tr>
+  <tr id="tr36"><td><img src="../css/images/no.gif" id="image36" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/crossbow_steel.png" class="skillItem"/></td><td>Steel crossbow</td><td id="level36">46</td><td >108</td><td id="num36"></td></tr>
+  <tr id="tr37"><td><img src="../css/images/no.gif" id="image37" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/bolt_redtopaz.png" class="skillItem"/></td><td>Red topaz bolt</td><td id="level37">48</td><td >3.9</td><td id="num37"></td></tr>
+  <tr id="tr38"><td><img src="../css/images/no.gif" id="image38" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/brutal_mithril.png" class="skillItem"/></td><td>Mithril brutal arrow</td><td id="level38">49</td><td >7.5</td><td id="num38"></td></tr>
+  <tr id="tr40"><td><img src="../css/images/no.gif" id="image40" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/shortbow_mapleu.png" class="skillItem"/></td><td>Maple shortbow (u)</td><td id="level39">50</td><td >50</td><td id="num39"></td></tr>
+  <tr id="tr39"><td><img src="../css/images/no.gif" id="image39" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Shortbow_Maple.png" class="skillItem"/></td><td>Maple shortbow</td><td id="level40">50</td><td >100</td><td id="num40"></td></tr>
+  <tr id="tr41"><td><img src="../css/images/no.gif" id="image41" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/barbed_bolt.png" class="skillItem"/></td><td>Barbed bolt</td><td id="level41">51</td><td >9.5</td><td id="num41"></td></tr>
+  <tr id="tr42"><td><img src="../css/images/no.gif" id="image42" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Dart_Mith.png" class="skillItem"/></td><td>Mithril dart</td><td id="level42">52</td><td >11.2</td><td id="num42"></td></tr>
+  <tr id="tr43"><td><img src="../css/images/no.gif" id="image43" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/crossbow_mithril.png" class="skillItem"/></td><td>Mithril crossbow</td><td id="level43">54</td><td >128</td><td id="num43"></td></tr>
+  <tr id="tr44"><td><img src="../css/images/no.gif" id="image44" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/bolt_mithril.png" class="skillItem"/></td><td>Mithril bolt</td><td id="level44">54</td><td >5</td><td id="num44"></td></tr>
+  <tr id="tr45"><td><img src="../css/images/no.gif" id="image45" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/longbow_mapleu.png" class="skillItem"/></td><td>Maple longbow (u)</td><td id="level45">55</td><td >58.25</td><td id="num45"></td></tr>
+  <tr id="tr46"><td><img src="../css/images/no.gif" id="image46" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Longbow_Maple.png" class="skillItem"/></td><td>Maple longbow</td><td id="level46">55</td><td >116.5</td><td id="num46"></td></tr>
+  <tr id="tr47"><td><img src="../css/images/no.gif" id="image47" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/broad.png" class="skillItem"/></td><td>Broad bolts</td><td id="level47">55</td><td >3</td><td id="num47"></td></tr>
+  <tr id="tr48"><td><img src="../css/images/no.gif" id="image48" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/bolt_sapphire.png" class="skillItem"/></td><td>Sapphire bolt</td><td id="level48">56</td><td >4.7</td><td id="num48"></td></tr>
+  <tr id="tr49"><td><img src="../css/images/no.gif" id="image49" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/bolt_emerald.png" class="skillItem"/></td><td>Emerald bolt</td><td id="level49">58</td><td >5.5</td><td id="num49"></td></tr>
+  <tr id="tr50"><td><img src="../css/images/no.gif" id="image50" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/arrow_adamant.png" class="skillItem"/></td><td>Adamant arrow</td><td id="level50">60</td><td >11.5</td><td id="num50"></td></tr>
+  <tr id="tr51"><td><img src="../css/images/no.gif" id="image51" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/bolt_adamant.png" class="skillItem"/></td><td>Adamant bolt</td><td id="level51">61</td><td >7</td><td id="num51"></td></tr>
+  <tr id="tr52"><td><img src="../css/images/no.gif" id="image52" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/crossbow_adamant.png" class="skillItem"/></td><td>Adamant crossbow</td><td id="level52">61</td><td >164</td><td id="num52"></td></tr>
+  <tr id="tr53"><td><img src="../css/images/no.gif" id="image53" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/brutal_adamant.png" class="skillItem"/></td><td>Adamant brutal arrow</td><td id="level53">62</td><td >10.2</td><td id="num53"></td></tr>
+  <tr id="tr54"><td><img src="../css/images/no.gif" id="image54" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/bolt_ruby.png" class="skillItem"/></td><td>Ruby bolt</td><td id="level54">63</td><td >6.3</td><td id="num54"></td></tr>
+  <tr id="tr55"><td><img src="../css/images/no.gif" id="image55" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/bolt_diamond.png" class="skillItem"/></td><td>Diamond bolt</td><td id="level55">65</td><td >7</td><td id="num55"></td></tr>
+  <tr id="tr57"><td><img src="../css/images/no.gif" id="image57" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/shortbow_yewu.png" class="skillItem"/></td><td>Yew shortbow (u)</td><td id="level56">65</td><td >66.5</td><td id="num56"></td></tr>
+  <tr id="tr56"><td><img src="../css/images/no.gif" id="image56" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Shortbow_Yew.png" class="skillItem"/></td><td>Yew shortbow</td><td id="level57">65</td><td >133</td><td id="num57"></td></tr>
+  <tr id="tr58"><td><img src="../css/images/no.gif" id="image58" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Dart_Adamant.png" class="skillItem"/></td><td>Adamant dart</td><td id="level58">67</td><td >15</td><td id="num58"></td></tr>
+  <tr id="tr59"><td><img src="../css/images/no.gif" id="image59" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/crossbow_rune.png" class="skillItem"/></td><td>Rune crossbow</td><td id="level59">69</td><td >200</td><td id="num59"></td></tr>
+  <tr id="tr60"><td><img src="../css/images/no.gif" id="image60" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/bolt_rune.png" class="skillItem"/></td><td>Rune Bolt</td><td id="level60">69</td><td >10</td><td id="num60"></td></tr>
+  <tr id="tr61"><td><img src="../css/images/no.gif" id="image61" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/longbow_yewu.png" class="skillItem"/></td><td>Yew longbow (u)</td><td id="level61">70</td><td >75</td><td id="num61"></td></tr>
+  <tr id="tr62"><td><img src="../css/images/no.gif" id="image62" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Longbow_Yew.png" class="skillItem"/></td><td>Yew longbow</td><td id="level62">70</td><td >150</td><td id="num62"></td></tr>
+  <tr id="tr63"><td><img src="../css/images/no.gif" id="image63" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/bolt_dragonstone.png" class="skillItem"/></td><td>Dragonstone bolt</td><td id="level63">71</td><td >8.2</td><td id="num63"></td></tr>
+  <tr id="tr64"><td><img src="../css/images/no.gif" id="image64" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/bolt_onyx.png" class="skillItem"/></td><td>Onyx bolt</td><td id="level64">73</td><td >9.4</td><td id="num64"></td></tr>
+  <tr id="tr65"><td><img src="../css/images/no.gif" id="image65" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/arrow_rune.png" class="skillItem"/></td><td>Runite arrow</td><td id="level65">75</td><td >15</td><td id="num65"></td></tr>
+  <tr id="tr66"><td><img src="../css/images/no.gif" id="image66" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/brutal_rune.png" class="skillItem"/></td><td>Runite brutal arrow</td><td id="level66">77</td><td >12.5</td><td id="num66"></td></tr>
+  <tr id="tr68"><td><img src="../css/images/no.gif" id="image68" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/shortbow_magicu.png" class="skillItem"/></td><td>Magic shortbow (u)</td><td id="level67">80</td><td >83.25</td><td id="num67"></td></tr>
+  <tr id="tr67"><td><img src="../css/images/no.gif" id="image67" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Shortbow_Magic.png" class="skillItem"/></td><td>Magic shortbow</td><td id="level68">80</td><td >166.5</td><td id="num68"></td></tr>
+  <tr id="tr69"><td><img src="../css/images/no.gif" id="image69" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Dart_Rune.png" class="skillItem"/></td><td>Runite dart</td><td id="level69">81</td><td >18.8</td><td id="num69"></td></tr>
+  <tr id="tr71"><td><img src="../css/images/no.gif" id="image71" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/longbow_magic(u).png" class="skillItem"/></td><td>Magic longbow (u)</td><td id="level70">85</td><td >91.5</td><td id="num70"></td></tr>
+  <tr id="tr70"><td><img src="../css/images/no.gif" id="image70" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/Longbow_Magic.png" class="skillItem"/></td><td>Magic longbow</td><td id="level71">85</td><td >183</td><td id="num71"></td></tr>
+  <tr id="tr72"><td><img src="../css/images/no.gif" id="image72" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/arrow_dragon.png" class="skillItem"/></td><td>Dragon arrow</td><td id="level72">90</td><td >15</td><td id="num72"></td></tr>
+  <tr id="tr73"><td><img src="../css/images/no.gif" id="image73" class="rimg"/></td><td width="30" height="30"><img src="../css/images/fletching/dragondart.png" class="skillItem"/></td><td>Dragon dart</td><td id="level73">95</td><td>25</td><td id="num73"></td></tr>
+  </tbody>
+  </table>
+</table>
+    </div>
+
+  </body>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Begin calculation script here -->
+  <script>
+      // Start responding to the hiscores button when the page loads
+      $(document).ready(() => {
+        $('#hiscores').submit(retrieveScores);
+      });
+
+      //handler for submit of hiscores username
+      const retrieveScores = (event) => {
+        //Don't do what a submit normally would, which includes a page reload
+        event.preventDefault();
+        let username = $('#username').val();
+        $.ajax({
+          url: `../hiscores?username=${username}`
+        }).done((data) => {
+          if (data.status !== 200) {
+            alert('Invalid username!');
+          } else {
+            let stats = data.response;
+            let fletch = stats.fletching;
+            // console.log(stats, fm);
+            $('#current').val(fletch.xp);
+            //insert level here for when you enter xp or username????
+            var yourLevel = "(level " + getLevel(fletch.xp) + ")"
+            document.getElementById('yourLevel').innerHTML =  yourLevel;
+          }
+        }).fail((err) => {
+          if (err) {
+            err = JSON.stringify(err, 2, null);
+            console.log(`error: ${err}`);
+          }
+        });
+      };
+
+      var levelAmounts;
+      $.ajax({
+        url: '../xp'
+      }).done((data) => {
+        levelAmounts = JSON.parse(data);
+      })
+      var xpAmounts = {
+        arrowShaft: .33,
+        headlessArrow: 1,
+        bronzeDart: 1.8,
+        bronzeArrow: 2.63,
+        shortbowU: 5,
+        shortbow: 10,
+        broneBrutalArrow: 1.5,
+        bronzeCbow: 24,
+        bronzeBolt: 0.5,
+        longbowU: 10,
+        longbow: 20,
+        opalBolts: 1.6,
+        ironArrow: 3.83,
+        ironBrutalArrow: 2.6,
+        oakShortbowU: 16.5,
+        oakShortbow: 33,
+        ironDart: 3.2,
+        bluriteCBow: 64,
+        oakLongbowU: 25,
+        oakLongbow: 50,
+        jadeBolt: 2.4,
+        compOgreBowU: 45.5,
+        compOgreBow: 90,
+        steelArrow: 6.33,
+        steelBrutalArrow: 5.2,
+        willowShortbowU: 33.25,
+        willowShortbow: 66.5,
+        steelDart: 7.5,
+        blackBrutalArrow: 6.3,
+        ironBolt: 1.9,
+        ironCbow: 88,
+        willowLongbowU: 41.5,
+        willowLongbow: 83,
+        pearlBolt: 3.2,
+        mithArrow: 8.83,
+        steelBolt: 3.5,
+        steelCbow: 108,
+        redTopazBolt: 3.9,
+        mithBrutalArrow: 7.5,
+        mapleShortbowU: 50,
+        mapleShortbow: 100,
+        barbedBolt: 9.5,
+        mithDart: 11.2,
+        mithCbow: 128,
+        mithBolt: 3,
+        mapleLongbowU: 58.25,
+        mapleLongbow: 116.5,
+        broadBolts: 3,
+        sapphireBolt: 4.7,
+        emeraldBolt: 5.5,
+        adamArrow: 11.5,
+        adamBolt: 7,
+        adamCbow: 164,
+        adamBrutalArrow: 10.2,
+        rubyBolt: 6.3,
+        diamondBolt: 7,
+        yewShortbowU: 66.5,
+        yewShortbow: 133,
+        adamDart: 15,
+        runeCbow: 200,
+        runeBolt: 10,
+        yewLongbowU:74,
+        yewLongbow: 150,
+        dragonstoneBolt: 8.2,
+        onyxBolt: 9.4,
+        runeArrow: 15,
+        runeBrutalArrow: 12.5,
+        magicShortbowU: 83.25,
+        magicShortbow: 166.5,
+        runeDart: 18.8,
+        magicLongbowU: 91.5,
+        magicLongbow: 183,
+        dragonArrow: 15,
+        dragonDart: 25
+
+      };
+
+      function calculate(){
+        var error = false
+        var currentXP = document.getElementById('current').value;
+        var targetLvl = parseInt(document.getElementById('target').value,10);
+        var currentLvl = parseInt(getLevel(currentXP),10);
+        var targetXP= levelAmounts[targetLvl];
+
+        var neededXP = targetXP - currentXP;
+        if(!isNaN(currentXP) && !isNaN(targetLvl) && (targetLvl > currentLvl) && currentXP < 13034431){
+          document.getElementById('textReport').innerHTML = "You need <b>" + neededXP + "</b> XP to level up from level <b>" + currentLvl + "</b> to level <b>"+ targetLvl + "</b>" ;
+          var firstRun = true;
+          for(var log in xpAmounts){
+              if(firstRun){
+                i=0;
+              }
+            var id = "num" + i;
+            i=i+1;
+
+          document.getElementById(id).innerHTML = getNumber(xpAmounts[log], currentXP, targetXP);
+          firstRun = false;
+
+        }
+
+          //change the 'x' to a check if the user is over the level for each specific type of item
+          i=0;
+          for(var key in xpAmounts){
+            var itemLevel = "level" + i;
+            var image = "image" + i;
+            i++;
+            //console.log(document.getElementById(itemLevel).innerHTML);
+            //console.log(currentLvl);
+            //console.log(currentLvl >= parseInt(document.getElementById(itemLevel).innerHTML,10));
+
+            //if user's level is higher than the item level, change the 'x' to a check
+            if(currentLvl >= parseInt(document.getElementById(itemLevel).innerHTML,10)){
+
+                document.getElementById(image).src= "../css/images/yes.gif";
+              }
+              //make sure it can go back to an 'x' if they enter a lower level
+              else{
+                  document.getElementById(image).src= "../css/images/no.gif";
+                }
+              }
+            }
+        //if currentXP is over the amount needed for 99, then the user cannot get a level up
+        else if(currentXP >= 13034431 && !isNaN(currentXP) && !isNaN(targetLvl)){
+            document.getElementById('textReport').innerHTML = "You already have 99!";
+        }
+        //if the inputs are numbers but target is less than or equals current
+        else if(!isNaN(currentXP) && !isNaN(targetLvl) && (targetLvl <= currentLvl)){
+          document.getElementById('textReport').innerHTML = "Your target level is not greater than your current level";
+        }
+        //if the inputs aren't numbers
+        else{
+            document.getElementById('textReport').innerHTML = "Please enter numbers";
+        }
+      }
+
+      function getLevel(XP){
+        var cLevel = 1;
+        if(XP < 13034431){
+        for(var key in levelAmounts){
+          if(levelAmounts[key] <= XP){
+            cLevel = key
+          }
+        }
+
+        }
+        else{
+          cLevel = 99;
+        }
+        return cLevel;
+      }
+
+      // function to determine how many of each log one would need to burn to reach target level
+      function getNumber(xp,current,target){
+        console.log(xp, current, target);
+        return Math.ceil((target-current)/xp);
+      }
+
+  </script>
+
+</html>
